@@ -38,16 +38,20 @@
 \newcounter{rpntcnt}
 \newcounter{revcnt}
 
+\makeatletter
+\renewcommand{\@seccntformat}[1]{}
+\makeatother
+
 % Environments
 \newenvironment{reviewer}{%
 	\refstepcounter{revcnt}%
 	\setcounter{rpntcnt}{0}%
-	\section*{Reviewer \therevcnt}%
+	\section{Reviewer \therevcnt}%
 }{}
 % Editor environment takes an optional argument
 \newenvironment{editor}[1][Editorial Decision]{%
 	\setcounter{epntcnt}{0}%
-	\section*{#1}%
+	\section{#1}%
 }{}
 
 % Reply Commands
